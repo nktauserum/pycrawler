@@ -37,7 +37,7 @@ class ExtractServiceStub(object):
         self.Extract = channel.unary_unary(
                 '/extractservice.ExtractService/Extract',
                 request_serializer=tools_dot_service__pb2.ExtractRequest.SerializeToString,
-                response_deserializer=tools_dot_service__pb2.ExtractResponse.FromString,
+                response_deserializer=tools_dot_service__pb2.ExtractResponses.FromString,
                 _registered_method=True)
 
 
@@ -57,7 +57,7 @@ def add_ExtractServiceServicer_to_server(servicer, server):
             'Extract': grpc.unary_unary_rpc_method_handler(
                     servicer.Extract,
                     request_deserializer=tools_dot_service__pb2.ExtractRequest.FromString,
-                    response_serializer=tools_dot_service__pb2.ExtractResponse.SerializeToString,
+                    response_serializer=tools_dot_service__pb2.ExtractResponses.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -86,7 +86,7 @@ class ExtractService(object):
             target,
             '/extractservice.ExtractService/Extract',
             tools_dot_service__pb2.ExtractRequest.SerializeToString,
-            tools_dot_service__pb2.ExtractResponse.FromString,
+            tools_dot_service__pb2.ExtractResponses.FromString,
             options,
             channel_credentials,
             insecure,

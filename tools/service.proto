@@ -4,17 +4,22 @@ package extractservice;
 
 service ExtractService {
   // Метод extract принимает запрос с URL и возвращает ответ с результатом.
-  rpc Extract(ExtractRequest) returns (ExtractResponse);
+  rpc Extract(ExtractRequest) returns (ExtractResponses);
 }
 
-// Запрос содержит URL.
+// Принимается массив URL для сканирования
 message ExtractRequest {
-  string url = 1;
+  repeated string url = 1;
 }
 
-// Ответ содержит результат выполнения extract.
+// Ответ содержит массив результатов выполнения extract.
+message ExtractResponses {
+  repeated ExtractResponse responses = 1;
+}
+
 message ExtractResponse {
-  string title = 1;
-  string sitename = 2;
-  string text = 3;
+  string url = 1;
+  string title = 2;
+  string sitename = 3;
+  string text = 4;
 }

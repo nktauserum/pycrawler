@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13tools/service.proto\x12\x0e\x65xtractservice\"\x1d\n\x0e\x45xtractRequest\x12\x0b\n\x03url\x18\x01 \x01(\t\"@\n\x0f\x45xtractResponse\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08sitename\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t2\\\n\x0e\x45xtractService\x12J\n\x07\x45xtract\x12\x1e.extractservice.ExtractRequest\x1a\x1f.extractservice.ExtractResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13tools/service.proto\x12\x0e\x65xtractservice\"\x1d\n\x0e\x45xtractRequest\x12\x0b\n\x03url\x18\x01 \x03(\t\"F\n\x10\x45xtractResponses\x12\x32\n\tresponses\x18\x01 \x03(\x0b\x32\x1f.extractservice.ExtractResponse\"M\n\x0f\x45xtractResponse\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x10\n\x08sitename\x18\x03 \x01(\t\x12\x0c\n\x04text\x18\x04 \x01(\t2]\n\x0e\x45xtractService\x12K\n\x07\x45xtract\x12\x1e.extractservice.ExtractRequest\x1a .extractservice.ExtractResponsesb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +33,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_EXTRACTREQUEST']._serialized_start=39
   _globals['_EXTRACTREQUEST']._serialized_end=68
-  _globals['_EXTRACTRESPONSE']._serialized_start=70
-  _globals['_EXTRACTRESPONSE']._serialized_end=134
-  _globals['_EXTRACTSERVICE']._serialized_start=136
-  _globals['_EXTRACTSERVICE']._serialized_end=228
+  _globals['_EXTRACTRESPONSES']._serialized_start=70
+  _globals['_EXTRACTRESPONSES']._serialized_end=140
+  _globals['_EXTRACTRESPONSE']._serialized_start=142
+  _globals['_EXTRACTRESPONSE']._serialized_end=219
+  _globals['_EXTRACTSERVICE']._serialized_start=221
+  _globals['_EXTRACTSERVICE']._serialized_end=314
 # @@protoc_insertion_point(module_scope)

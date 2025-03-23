@@ -2,22 +2,22 @@ import trafilatura
 import json
 
 class Data:
-    def __init__(self, title, sitename, text):
+    def __init__(self, title, sitename, text, url):
         self.title = title
         self.sitename = sitename
         self.text = text
+        self.url = url
 
     def json(self):
-        return {
-            "title":    self.title
-        }
+        return json.loads(self)
 
 def _extract_from_url(url):
     downloaded = trafilatura.fetch_url(url)
     result = trafilatura.extract(downloaded, include_formatting=False, include_links=False, include_images=False, include_tables=False, only_with_metadata=True, output_format='json')
     if result:
         result_dict = json.loads(result)
-        return Data(result_dict["title"], result_dict["source-hostname"], result_dict["raw_text"])
+        #print(result_dict)
+        return Data(result_dict["title"], result_dict["source-hostname"], result_dict["raw_text"], url)
     return None
 
 def extract(url):
